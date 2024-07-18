@@ -42,10 +42,14 @@ pub mod tiny_adventure {
         if to_right {
             if player_account.position < 4 {
                 player_account.position += 1;
+            } esle {
+                msg!("You are already at the end of the game!");
             }
         } else {
             if player_account.position > 0 {
                 player_account.position -= 1;
+            } else {
+                msg!("You are already at the beginning of the game!");
             }
         }
 
