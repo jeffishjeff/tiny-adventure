@@ -54,6 +54,8 @@ pub mod tiny_adventure {
                 msg!("Loot received!");
                 **ctx.accounts.loot_account.to_account_info().try_borrow_mut_lamports()? -= loot;
                 **ctx.accounts.player.to_account_info().try_borrow_mut_lamports()? += loot;
+            } else {
+                msg!("Wrong password!");
             }
         }
 
